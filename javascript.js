@@ -1,18 +1,20 @@
-fetch(
-  "https://spotify23.p.rapidapi.com/search/?q=metallica&type=multi&offset=0&limit=20&numberOfTopResults=5",
-  {
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "spotify23.p.rapidapi.com",
-      "x-rapidapi-key": "997d2861edmsh0cbd64290b6eb42p1acebfjsn6e8957634da8",
-    },
-  }
-)
-  .then((response) => {
-    response.json().then((json) => {
-      console.log(json);
-    });
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+const key = "691b87c3afa544e5801120929221803";
+const url = "http://api.weatherapi.com/v1";
+async function weather() {
+  let curentweather = await fetch(
+    "http://api.weatherapi.com/v1/current.json?key=" + key + "&q=stockholm"
+  );
+  let currentweatherjson = await curentweather.json();
+  console.log(currentweatherjson);
+  let temprature = currentweatherjson.current.temp_c;
+  let Last_updated = currentweatherjson.current.last_updated;
+  let feelslike_c = currentweatherjson.current.feelslike_c;
+  let gust_kph = currentweatherjson.current.gust_kph;
+  let weather = document.getElementById("weather");
+  weather.innerHTML += `<ul>Last updated: ${Last_updated}</ul>`;
+  weather.innerHTML += `<ul>Temprature: ${temprature}°C </ul>`;
+  weather.innerHTML += `<ul>It feelslike: ${feelslike_c}°C </ul>`;
+  weather.innerHTML += `<ul>Wind speeds: ${gust_kph}km/h </ul>`;
+}
+
+weather();
