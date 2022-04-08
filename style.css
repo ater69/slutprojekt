@@ -59,8 +59,26 @@ body {
 input {
   margin-left: 30px;
 }
-i {
+.fa-cloud-bolt {
   margin-left: 30px;
   font-size: 50px;
   color: gold;
+}
+.SignIn,
+.KontaktaOss {
+  font-family: "Press Start 2P", cursive;
+  color: azure;
+  text-decoration: none;
+  margin-left: 30px;
+}
+.pushright {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex: 50%;
+  width: 50%;
 }

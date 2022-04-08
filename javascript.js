@@ -25,5 +25,8 @@ search.onkeydown = async function (event) {
       "beforeend",
       `<tr><td>${city}</td><td>${temprature}°C </td><td>${feelslike_c}°C </td><td>${gust_kph}km/h </td><td>${Last_updated}</td></tr>`
     );
+    var scrollDiv = document.getElementById("botten").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: "smooth" });
+    search.value = "";
   }
 };
