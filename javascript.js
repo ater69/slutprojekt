@@ -28,5 +28,15 @@ search.onkeydown = async function (event) {
     var scrollDiv = document.getElementById("botten").offsetTop;
     window.scrollTo({ top: scrollDiv, behavior: "smooth" });
     search.value = "";
+    getImage(city);
   }
 };
+
+async function getImage(city) {
+  var cityimage = await fetch(
+    `https://api.unsplash.com/search/photos/?query=${city}&client_id=nuPwijRDNMVGcLepg_BsD1rQmkzd-YFnTYrTkAeVJ5U`
+  );
+  let cityimagejson = await cityimage.json();
+  Hero.insertAdjacentHTML();
+  console.log(cityimage, cityimagejson);
+}
