@@ -34,7 +34,7 @@ search.onkeydown = async function (event) {
 
 async function getImage(city) {
   var cityimage = await fetch(
-    `https://api.unsplash.com/search/photos/?query=city-${city}&client_id=nuPwijRDNMVGcLepg_BsD1rQmkzd-YFnTYrTkAeVJ5U`
+    `https://api.unsplash.com/search/photos/?query=city%20${city}&client_id=nuPwijRDNMVGcLepg_BsD1rQmkzd-YFnTYrTkAeVJ5U`
   );
   let cityimagejson = await cityimage.json();
   let hero = document.getElementById("hero");

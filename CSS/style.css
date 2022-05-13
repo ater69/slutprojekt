@@ -3,7 +3,7 @@
   margin: 0;
 }
 #hero {
-  background-image: url("hero.jpg");
+  background-image: url("../images/hero.jpg");
   width: 90vw;
   height: 90vh;
   background-size: cover;
