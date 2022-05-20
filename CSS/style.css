@@ -2,6 +2,61 @@
   padding: 0;
   margin: 0;
 }
+@media only screen and (max-width: 600px) {
+  .tabel {
+    font-size: 100%;
+    display: block;
+  }
+  td {
+    display: block;
+    padding-top: 6px;
+    padding-right: 10%;
+    padding-left: 100%;
+    width: 100%;
+    position: relative;
+  }
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 50%;
+    white-space: nowrap;
+  }
+  td:nth-child(1):before {
+    content: "city";
+  }
+  td:nth-child(2):before {
+    content: "Temprature";
+  }
+  td:nth-child(3):before {
+    content: "Feelslike";
+  }
+  td:nth-child(4):before {
+    content: "Windspeed";
+  }
+  td:nth-child(5):before {
+    content: "Date";
+  }
+}
+@media only screen and (min-width: 600px) {
+  .tabel {
+    font-size: 100%;
+    display: flex;
+  }
+  td,
+  th {
+    padding-right: 2%;
+    padding-left: 2%;
+    width: 210px;
+  }
+}
+
 #hero {
   background-image: url("../images/hero.jpg");
   width: 90vw;
@@ -25,9 +80,7 @@ nav {
 }
 
 .tabel {
-  display: flex;
   justify-content: center;
-  font-size: 100%;
   font-family: "Press Start 2P", cursive;
   color: goldenrod;
   width: 100%;
@@ -35,15 +88,10 @@ nav {
 }
 
 td {
-  padding-right: 2%;
-  padding-left: 2%;
-  width: 210px;
   background-color: rgb(0, 0, 0);
   height: 45px;
 }
 th {
-  padding-right: 2%;
-  padding-left: 2%;
   width: 210px;
   background-color: rgb(0, 0, 0);
   height: 40px;
